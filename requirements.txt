@@ -8,3 +8,4 @@ matplotlib
 plotly
 streamlit
 groq==0.4.1
+python-dotenv
