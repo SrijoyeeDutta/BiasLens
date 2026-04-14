@@ -3,7 +3,6 @@
 import os
 import random
 from groq import Groq
-from dotenv import load_dotenv
 
 # ─────────────────────────────────────────
 # Groq API — Free tier, no credit card needed
@@ -12,7 +11,6 @@ from dotenv import load_dotenv
 # 3. Paste your key in .env: GROQ_API_KEY=your_key_here
 # ─────────────────────────────────────────
 
-load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=api_key)
 

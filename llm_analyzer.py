@@ -3,7 +3,6 @@
 import os
 import json
 import re
-from dotenv import load_dotenv
 from groq import Groq
 
 # ─────────────────────────────────────────
@@ -13,7 +12,6 @@ from groq import Groq
 # 3. Paste your key in .env: GROQ_API_KEY=your_key_here
 # ─────────────────────────────────────────
 
-load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=api_key)
 
