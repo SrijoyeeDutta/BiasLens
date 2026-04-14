@@ -7,4 +7,4 @@ sentence-transformers
 matplotlib
 plotly
 streamlit
-groq
+groq==0.4.1
