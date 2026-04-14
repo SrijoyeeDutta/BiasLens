@@ -86,31 +86,3 @@ def generate_text(prompt: str) -> str:
             "Make sure your GROQ_API_KEY is valid.\n"
             "Get a free key at: https://console.groq.com"
         )
-        
-        response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
-            messages=[
-                {
-                    "role": "user",
-                    "content": content
-                }
-            ],
-            max_tokens=500,
-            temperature=0.7,
-        )
-
-        text = response.choices[0].message.content.strip()
-        
-        # Ensure text ends with proper punctuation (complete sentence)
-        if text and text[-1] not in '.!?':
-            # Find the last sentence boundary
-            for punct in '.!?':
-                last_punct_idx = text.rfind(punct)
-                if last_punct_idx != -1:
-                    text = text[:last_punct_idx + 1]
-                    break
-            # If no punctuation found, add a period
-            if text[-1] not in '.!?':
-                text = text.rstrip() + '.'
-        
-        return text
